@@ -1,1 +1,3 @@
-# -openhpi_capstone1_TheProject
+# capstone1-TheProject
+
+Some very basic structure to get started with the game.
