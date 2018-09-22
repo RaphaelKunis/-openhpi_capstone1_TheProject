@@ -22,4 +22,9 @@ public class PaddleView extends AbstractView {
 		display.rect(p.getPosX(), p.getPosY(), p.getWidth(), p.getHeight());
 		display.redraw();
 	}
+
+	@Override
+	public AbstractSubject getSubject() {
+		return p;
+	}
 }

@@ -5,4 +5,7 @@ public final class Defaults {
 	public final static int DIM_WIDTH  = 500;
 	public final static int DIM_HEIGHT = 300;
 	public final static int MOV_STEP   = 1;
+	
+	public final static String NAME_PADDLE = "Paddle";
+	public final static String NAME_BALL   = "Ball";
 }

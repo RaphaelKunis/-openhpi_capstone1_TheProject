@@ -6,7 +6,7 @@ import de.openhpi.capstone1.game.view.AbstractView;
 import de.openhpi.capstone1.game.view.BallView;
 import processing.core.PApplet;
 
-public class InteractiveBall  extends InteractiveComponent{
+public class InteractiveBall extends InteractiveComponent{
 
 	Ball b;
 	BallView bView;
@@ -45,9 +45,12 @@ public class InteractiveBall  extends InteractiveComponent{
 		catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		if (isOver) { System.out.println("GAME OVER"); System.exit(-1); }
+		if (isOver == true) { 
+				System.out.println("GAME OVER"); 
+				System.exit(-1); 			
+		}
 		// detect paddle collision and switch direction
-		???
+		// ???
 	}
 
 	@Override

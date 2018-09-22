@@ -10,9 +10,15 @@ public abstract class InteractiveComponent {
 	
 	protected AbstractView[] views; 
 	
+	
 	public void update() {
 		for (AbstractView view : views) {
 			view.update(); 
 		}
+	}
+	
+	/* return the views **/
+	public AbstractView[] getViews() {
+		return views;
 	}
 }

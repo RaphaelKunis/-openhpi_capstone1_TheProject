@@ -22,4 +22,11 @@ public class BallView  extends AbstractView {
 		display.ellipse(b.getPosX(), b.getPosY(), b.getWidth(), b.getHeight());
 		display.redraw();
 	}
+
+	@Override
+	public AbstractSubject getSubject() {
+		return b;
+	}
+	
+	
 }

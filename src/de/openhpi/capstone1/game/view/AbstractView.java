@@ -1,5 +1,6 @@
 package de.openhpi.capstone1.game.view;
 
+import de.openhpi.capstone1.game.model.AbstractSubject;
 import processing.core.PApplet;
 
 public abstract class AbstractView {
@@ -10,4 +11,6 @@ public abstract class AbstractView {
 	}
 	
 	public abstract void update();
+	
+	public abstract AbstractSubject getSubject();
 }

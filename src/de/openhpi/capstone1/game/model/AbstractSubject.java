@@ -49,4 +49,21 @@ public abstract class AbstractSubject {
 		posY = (posY >= Defaults.DIM_HEIGHT - height/2) ? Defaults.DIM_HEIGHT - height/2 : this.posY + Defaults.MOV_STEP;	// nicht unten raus
 	}	
 	
+	/*
+	 * Only relevant for moving objects
+	 * Detect collision with edges of PApplet. 
+	 * Returns true if object leaves field.	
+	 */
+	public abstract boolean detectCollision() throws Exception;
+	
+	/*
+	 * Only relevant for moving objects
+	 * Detect collision with other AbstractSubject. 
+	 * Returns true if object leaves field.	
+	 */
+	public abstract boolean detectCollision(AbstractSubject other) throws Exception;
+	
+	public String toString () {
+		return this.getClass().getSimpleName() + ": X= " + posX + ", Y= " + posY + ", W= " + width + "H= " + height + ";";
+	}
 }

@@ -29,6 +29,7 @@ public class InteractivePaddle extends InteractiveComponent{
 		handleEvent(Event.NONE, null);
 	}
 
+	@Override
 	public void handleEvent(Event e, Object o) {
 		switch (e) {
 			case KEYBOARD: int keyCode = (int) o;
