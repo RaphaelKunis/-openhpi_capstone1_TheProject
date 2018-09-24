@@ -1,5 +1,6 @@
 package de.openhpi.capstone1.game.builder;
 
+import de.openhpi.capstone1.game.exceptions.OutOfDisplayException;
 import de.openhpi.capstone1.game.model.Ball;
 import de.openhpi.capstone1.game.model.Event;
 import de.openhpi.capstone1.game.view.AbstractView;
@@ -23,7 +24,7 @@ public class InteractiveBall extends InteractiveComponent{
 	}	
 	
 	@Override
-	public void handleEvent() {
+	public void handleEvent() throws OutOfDisplayException  {
 		// move the ball
 		switch (b.getDir()) {
 			case NORTHEAST: b.moveUp();   
@@ -42,15 +43,14 @@ public class InteractiveBall extends InteractiveComponent{
 		// detect edge collision and switch direction
 		boolean isOver = false;
 		try { isOver = b.detectCollision(); } 
-		catch (Exception e) {
+		catch (Exception e) { 
 			System.out.println(e.getMessage());
 		}
 		if (isOver == true) { 
-				System.out.println("GAME OVER"); 
-				System.exit(-1); 			
+		//		System.out.println("GAME OVER"); 
+		//		System.exit(-1);
+			throw new OutOfDisplayException();
 		}
-		// detect paddle collision and switch direction
-		// ???
 	}
 
 	@Override

@@ -4,6 +4,7 @@ package de.openhpi.capstone1.game.starter;
 import de.openhpi.capstone1.game.builder.InteractiveComponent;
 import de.openhpi.capstone1.game.builder.InteractiveComponentBuilder;
 import de.openhpi.capstone1.game.controller.InteractiveComponentController;
+import de.openhpi.capstone1.game.exceptions.OutOfDisplayException;
 import de.openhpi.capstone1.game.controller.BallPaddleController;
 import de.openhpi.capstone1.game.model.Event;
 import de.openhpi.capstone1.game.model.Mouse;
@@ -34,9 +35,18 @@ public class TheApp extends PApplet {
 		this.fill(0);
 		this.background(204);
 		pComp.update();
-		bComp.handleEvent();  // move the ball further
-		ctr.checkCollision();
-		bComp.update();
+		try { bComp.handleEvent(); bComp.update(); } // move the ball further
+		catch (OutOfDisplayException e) {
+			System.out.println(e.getMessage());
+			// reset ball
+			bComp = InteractiveComponentBuilder.create(this, "Ball");
+			ctr = new BallPaddleController(bComp, pComp);
+		}
+		catch (Exception e) {	// check for other Exceptions
+			System.out.println(e.getMessage());
+		}
+		
+		ctr.checkCollision();	// check the ball->paddle collision
 	}
 	
 	@Override 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_g3sloMAsEeihP900rxzmlA" name="openhpi_capstone1_TheProject">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_g80WMMAsEeihP900rxzmlA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ha4LMMAsEeihP900rxzmlA" name="Starter">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_GsnjYMAtEeihP900rxzmlA" name="main"/>
+  </packagedElement>
+</uml:Model>
