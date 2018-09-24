@@ -1,5 +1,8 @@
 package de.openhpi.capstone1.game.starter;
 
+/*
+ * Default values used in App
+ */
 public final class Defaults {
 
 	public final static int DIM_WIDTH  = 500;
