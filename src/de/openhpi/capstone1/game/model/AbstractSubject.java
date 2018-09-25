@@ -4,10 +4,11 @@ import de.openhpi.capstone1.game.starter.Defaults;
 
 public abstract class AbstractSubject {
 	
-	protected int posX   = 0;
-	protected int posY   = 0;
-	protected int width  = 0;
-	protected int height = 0;
+	protected int posX   	= 0;
+	protected int posY   	= 0;
+	protected int width  	= 0;
+	protected int height 	= 0;
+	protected int move_step =  Defaults.MOV_STEP;
 	
 	public int getPosX() {
 		return posX;
@@ -34,19 +35,19 @@ public abstract class AbstractSubject {
 	}
 	
 	public void moveRight() {
-		posX = (posX >= Defaults.DIM_WIDTH - width/2) ? Defaults.DIM_WIDTH - width/2 : this.posX + Defaults.MOV_STEP;	// nicht rechts raus
+		posX = (posX >= Defaults.DIM_WIDTH - width/2 + move_step) ? Defaults.DIM_WIDTH - width/2 : this.posX + move_step;	// nicht rechts raus
 	}
 
 	public void moveLeft() {
-		posX = (posX <= width/2) ? width/2 : this.posX - Defaults.MOV_STEP;	// nicht links raus
+		posX = (posX <= width/2 - move_step) ? width/2 : this.posX - move_step;	// nicht links raus
 	}	
 	
 	public void moveUp() {
-		posY = (posY <= height/2) ? height/2 : this.posY - Defaults.MOV_STEP;	// nicht oben raus
+		posY = (posY <= height/2 - move_step) ? height/2 : this.posY - move_step;	// nicht oben raus
 	}
 
 	public void moveDown() {
-		posY = (posY >= Defaults.DIM_HEIGHT - height/2) ? Defaults.DIM_HEIGHT - height/2 : this.posY + Defaults.MOV_STEP;	// nicht unten raus
+		posY = (posY >= Defaults.DIM_HEIGHT - height/2 + move_step) ? Defaults.DIM_HEIGHT - height/2 : this.posY + move_step;	// nicht unten raus
 	}	
 	
 	/*

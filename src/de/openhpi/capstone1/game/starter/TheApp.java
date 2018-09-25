@@ -49,16 +49,17 @@ public class TheApp extends PApplet {
 		ctr.checkCollision();	// check the ball->paddle collision
 	}
 	
-	@Override 
-	public void mouseClicked() {
-		pComp.handleEvent(Event.MOUSECLICK, null);
-	}
-	
+
 	@Override 
 	public void mouseMoved() {
 		mouse.setCurPosX(this.mouseX);
 		pComp.handleEvent(Event.MOUSEMOVE, mouse);
 	}
+
+//	@Override 
+//	public void mouseClicked() {
+//		pComp.handleEvent(Event.MOUSECLICK, null);
+//	}	
 	
 	@Override
 	public void keyPressed() {

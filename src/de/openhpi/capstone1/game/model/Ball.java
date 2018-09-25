@@ -5,13 +5,14 @@ import de.openhpi.capstone1.game.starter.Defaults;
 
 public class Ball extends AbstractSubject {
 
-	Direction dir; 
+	private Direction dir; 
 	
 	public Ball () {
 		this.width 	= 5;
 		this.height = 5;
 		this.posX = Defaults.DIM_WIDTH/2;
 		this.posY = Defaults.DIM_HEIGHT/2;
+		this.move_step = Defaults.MOV_STEP_BALL;
 		this.dir = Direction.NORTHWEST; 
 	}
 

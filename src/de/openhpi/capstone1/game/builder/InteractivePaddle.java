@@ -10,7 +10,6 @@ import processing.core.PApplet;
 
 public class InteractivePaddle extends InteractiveComponent{
 
-	Paddle p;
 	AbstractView pView;
 	
 	public InteractivePaddle(PApplet applet) {
@@ -19,8 +18,7 @@ public class InteractivePaddle extends InteractiveComponent{
 	}
 	
 	private void init(PApplet applet) {
-		p = new Paddle();
-		pView = new PaddleView(applet, p);
+		pView = new PaddleView(applet, new Paddle());
 		views = new AbstractView[] {pView};
 	}
 	
@@ -33,15 +31,15 @@ public class InteractivePaddle extends InteractiveComponent{
 	public void handleEvent(Event e, Object o) {
 		switch (e) {
 			case KEYBOARD: int keyCode = (int) o;
-						   if (keyCode == 39) p.moveRight();
-						   if (keyCode == 37) p.moveLeft();		
+						   if (keyCode == 39) for (AbstractView v : views) v.getSubject().moveRight();
+						   if (keyCode == 37) for (AbstractView v : views) v.getSubject().moveLeft();		
 						   break;
 			case MOUSEMOVE: Mouse mouse = (Mouse) o;
-							if (mouse.getMove() == MouseMove.RIGHT) p.moveRight(); 
-							else p.moveLeft();
+							if (mouse.getMove() == MouseMove.RIGHT) for (AbstractView v : views) v.getSubject().moveRight(); 
+							else for (AbstractView v : views) v.getSubject().moveLeft();
 							break;
-			case MOUSECLICK: break;		// Currently does nothing
+//			case MOUSECLICK: break;		// Currently does nothing
 			case NONE: return;
-		}	
+		}
 	}
 }

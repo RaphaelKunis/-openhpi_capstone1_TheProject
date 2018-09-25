@@ -9,6 +9,7 @@ public class Paddle extends AbstractSubject {
 		this.height = 15;
 		this.posX = Defaults.DIM_WIDTH/2;
 		this.posY = Defaults.DIM_HEIGHT - height+1;
+		this.move_step = Defaults.MOV_STEP_PADDLE;
 	}
 
 	@Override
